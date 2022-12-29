@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/alexdoria/workspace/kohlsmleinterview/mlruns/0/480cfec54a8e422f8d527a010b9a13f2/artifacts
+end_time: 1672288246703
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 480cfec54a8e422f8d527a010b9a13f2
+run_name: industrious-stag-568
+run_uuid: 480cfec54a8e422f8d527a010b9a13f2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672288244921
+status: 3
+tags: []
+user_id: alexdoria

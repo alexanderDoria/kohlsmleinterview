@@ -1,0 +1,7 @@
+scikit-learn==1.2.0
+mlflow
+numpy
+pandas
+scikit-learn
+flask
+regex
