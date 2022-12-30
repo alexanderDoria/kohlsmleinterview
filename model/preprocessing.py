@@ -1,10 +1,10 @@
+import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
-
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.model_selection import train_test_split
 from typing import List
-import pandas as pd
 
 
 class PreProcessor:
@@ -21,7 +21,11 @@ class PreProcessor:
         df_y = df[label]
         return df_X, df_y
 
-    def create_preprocessor(self, numerical_imputer='median'):
+    def train_test_split(self, X: pd.DataFrame, y, split_ratio: float = 0.8):
+        assert 0 < split_ratio < 1.0, "split_ratio must be a value between 0 and 1"
+        return train_test_split(X, y, train_size=split_ratio)
+
+    def create_transformer(self, numerical_imputer='median'):
         transformers = []
         if self.numeric_features:
             numeric_transformer = Pipeline(
@@ -36,7 +40,8 @@ class PreProcessor:
             transformers.append(
                 ("cat", categorical_transformer, self.categorical_features))
 
-        preprocessor = ColumnTransformer(
-            transformers=[transformers]
+        transformer = ColumnTransformer(
+            transformers=transformers
         )
-        return preprocessor()
+
+        return transformer

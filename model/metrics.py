@@ -9,7 +9,7 @@ class Metrics:
         if is_classifier(model):
             return {
                 'F1': metrics.f1_score,
-                'Accuracy': metrics.accuracy
+                'Accuracy': metrics.accuracy_score
             }
         elif is_regressor(model):
             return {

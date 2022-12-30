@@ -2,11 +2,10 @@ from pandas import DataFrame
 import importlib
 import logging
 import joblib
-from sklearn.model_selection import train_test_split
 import sklearn
 from typing import List
-from metrics import Metrics
 import mlflow
+from metrics import Metrics
 
 
 class Model:
@@ -23,19 +22,15 @@ class Model:
             model_name, model_save_name)
         self.metrics = Metrics.infer_metrics(self.model)
 
-    def train_test_split(self, input_data: DataFrame, split_ratio: float = 0.8):
-        assert 0 < split_ratio < 1.0, "split_ratio must be a value between 0 and 1"
-        return train_test_split(input_data, train_size=split_ratio)
-
-    def get_model(
-        model_name: str, import_module: str, model_params: dict
-    ) -> sklearn.base.BaseEstimator:
+    def get_model(self,
+                  model_name: str, import_module: str, model_params: dict
+                  ) -> sklearn.base.BaseEstimator:
         model_class = getattr(
             importlib.import_module(import_module), model_name)
         model = model_class(**model_params)
         return model
 
-    def set_default_model_save_name(self, model_name: str):
+    def set_default_model_save_name(self, model_name: str, model_save_name: str):
         return model_name if model_name else type(self.model).__name__
 
     def train(self, features: List[str], target):
@@ -57,12 +52,13 @@ class Model:
 
     def log_metrics(self, metrics):
         for metric in metrics:
-            self.log(metric)
+            self.log(metric['metric_name'], metric['metric_value'])
 
     def log(self, metric_name, metric_value):
         mlflow.log_metric(metric_name, metric_value)
-        return
 
     def save_model(self, model_save_name=""):
         model_save_name = model_save_name if model_save_name else self.model_save_name
-        joblib.dump(self.model, model_save_name)
+
+        joblib.dump(self.model, f"saved_models/{model_save_name}")
+        mlflow.sklearn.log_model(self.model, "model_save_name")
