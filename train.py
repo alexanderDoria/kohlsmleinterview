@@ -45,8 +45,8 @@ def train():
     )
 
     preprocessor = PreProcessor(
-        categorical_features=["x3", "x6", "x7"],
-        numeric_features=["x1", "x2", "x4", "x5"]
+        categorical_features=[2, 5, 6],
+        numeric_features=[0, 1, 3, 4]
     )
 
     X, y = preprocessor.x_y_split(data, 'y')
@@ -70,7 +70,7 @@ def train():
 
     model.save_model()
 
-    joblib.dump(clf, f"{model_save_path}")
+    joblib.dump(clf, model_save_path)
 
 
 if __name__ == '__main__':

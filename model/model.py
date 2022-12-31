@@ -60,5 +60,5 @@ class Model:
     def save_model(self, model_save_name=""):
         model_save_name = model_save_name if model_save_name else self.model_save_name
 
-        joblib.dump(self.model, f"saved_models/{model_save_name}")
+        # joblib.dump(self.model, f"saved_models/{model_save_name}")
         mlflow.sklearn.log_model(self.model, "model_save_name")
