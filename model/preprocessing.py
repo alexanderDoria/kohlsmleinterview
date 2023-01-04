@@ -8,7 +8,6 @@ from typing import List
 
 
 class PreProcessor:
-
     def __init__(self,
                  numeric_features: List[str] = [],
                  categorical_features: List[str] = []
@@ -25,7 +24,7 @@ class PreProcessor:
         assert 0 < split_ratio < 1.0, "split_ratio must be a value between 0 and 1"
         return train_test_split(X, y, train_size=split_ratio)
 
-    def create_transformer(self, numerical_imputer='median'):
+    def create_transformer(self, numerical_imputer: str = 'median') -> ColumnTransformer:
         transformers = []
         if self.numeric_features:
             numeric_transformer = Pipeline(

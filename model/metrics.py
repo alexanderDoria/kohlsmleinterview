@@ -4,6 +4,16 @@ from sklearn.base import is_classifier, is_regressor
 
 
 class Metrics:
+    """
+    A class used to determinte appropriate metrics.
+    Used for standardization across model types.
+
+    Methods
+    -------
+    infer_metrics(model)
+        Returns metrics based on whether a model is a classifier or regressor.
+    """
+
     @staticmethod
     def infer_metrics(model):
         if is_classifier(model):

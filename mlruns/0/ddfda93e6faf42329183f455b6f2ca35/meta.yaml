@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/alexdoria/workspace/kohlsmleinterview/mlruns/0/ddfda93e6faf42329183f455b6f2ca35/artifacts
+end_time: 1672819030985
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ddfda93e6faf42329183f455b6f2ca35
+run_name: silent-cub-582
+run_uuid: ddfda93e6faf42329183f455b6f2ca35
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672819029003
+status: 3
+tags: []
+user_id: alexdoria

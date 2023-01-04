@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/alexdoria/workspace/kohlsmleinterview/mlruns/0/f566edae94894e86862b287c5e898779/artifacts
+end_time: 1672819370856
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f566edae94894e86862b287c5e898779
+run_name: enchanting-hawk-665
+run_uuid: f566edae94894e86862b287c5e898779
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672819368967
+status: 3
+tags: []
+user_id: alexdoria

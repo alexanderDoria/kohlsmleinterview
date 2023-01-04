@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/alexdoria/workspace/kohlsmleinterview/mlruns/0/9f56d5d8031242449c38cf3edd028ded/artifacts
+end_time: 1672818307778
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9f56d5d8031242449c38cf3edd028ded
+run_name: placid-mole-712
+run_uuid: 9f56d5d8031242449c38cf3edd028ded
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672818305836
+status: 3
+tags: []
+user_id: alexdoria
