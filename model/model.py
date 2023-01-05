@@ -84,7 +84,7 @@ class Model:
         for metric in self.metrics:
             values.append({
                 'metric_name': metric,
-                'metric_value': self.metrics[metric](true, pred)
+                'metric_value': round(self.metrics[metric](true, pred), 2)
             })
         logging.info(values)
         return values
