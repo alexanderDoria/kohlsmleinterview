@@ -10,6 +10,7 @@ from .metrics import Metrics
 class Model:
     """
     A class used to represent an ML model and relevant use cases.
+    Uses sklearn and MLflow stack for training and logging.
 
     ...
 
