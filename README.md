@@ -8,7 +8,9 @@ To train the model, use the training script: `train.py`. Look at the arguments i
 
 `python3 train.py --model_save_path=saved_models/RandomForestClassifier --train_data_path=data/train.csv --model_name=RandomForestClassifier --import_module=sklearn.ensemble --model_params='{"n_estimators": 50}'`
 
-This script uses MLflow to track metrics.
+## Track metrics
+
+This script uses MLflow to log metrics. To view them (along with artifacts), make sure MLflow is installed, and run `mlflow ui` in the root directory of this project. Some MLflow run metrics have been saved already under `mlruns/`.
 
 ## Build Docker container
 
