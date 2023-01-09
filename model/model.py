@@ -105,8 +105,7 @@ class Model:
 
     def log(self, metric_name: str, metric_value: float):
         """
-        Uses MLflow to log metric.
-
+        Uses MLflow to log a metric.
 
         Parameters
         ----------
@@ -121,7 +120,7 @@ class Model:
 
     def mlflow_log_model(self):
         """
-        Logs model within ML run folder in /artifacts created by MLflow
+        Logs model within specific ML run folders in /artifacts created by MLflow.
 
         """
         mlflow.sklearn.log_model(self.model, 'model')
