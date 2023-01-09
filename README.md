@@ -4,9 +4,11 @@ This repo contains instructions, code, and data for creating a training script a
 
 ## Train model
 
-To train the model, use the training script: `train.py`. An example run would be:
+To train the model, use the training script: `train.py`. Look at the arguments in the file for complete set of run parameters. An example run would be:
 
 `python3 train.py --model_save_path=saved_models/RandomForestClassifier --train_data_path=data/train.csv --model_name=RandomForestClassifier --import_module=sklearn.ensemble --model_params='{"n_estimators": 50}'`
+
+This script uses MLflow to track metrics.
 
 ## Build Docker container
 
